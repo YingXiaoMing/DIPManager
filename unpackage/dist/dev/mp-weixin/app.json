@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/login/index",
+    "pages/freeLogin/index",
+    "pages/index/index",
+    "pages/dipManager/index",
+    "pages/department/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3c9cff",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/dipManager/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/department/index",
+        "text": "科室盈亏",
+        "iconPath": "static/tabbar/department.png",
+        "selectedIconPath": "static/tabbar/department-active.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

@@ -1,0 +1,72 @@
+.login-container.data-v-4586967a {
+  background-color: #f6f7fa;
+  box-sizing: border-box;
+}
+.login-container .circle-left.data-v-4586967a {
+  position: fixed;
+  width: 460rpx;
+  height: 460rpx;
+  background-color: rgba(22, 152, 253, 0.1);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 460rpx;
+}
+.login-container .circle-bottom-right.data-v-4586967a {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 250rpx;
+  height: 250rpx;
+  background-color: rgba(22, 152, 253, 0.1);
+  border-top-left-radius: 250rpx;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.login-container .page-content.data-v-4586967a {
+  position: relative;
+  min-height: calc(100vh - 44rpx);
+  padding: 20rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+}
+.login-container .free-login-btn.data-v-4586967a {
+  position: fixed;
+  right: 30rpx;
+  top: 220rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.login-container .login-title.data-v-4586967a {
+  margin-top: 300rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+  color: #333;
+  position: relative;
+  margin-bottom: 80rpx;
+}
+.login-container .login-btn-wrap.data-v-4586967a {
+  margin-top: 80rpx;
+}
+.login-container .agreement-section.data-v-4586967a {
+  position: relative;
+  margin-top: auto;
+  margin-bottom: 10rpx;
+  font-size: 24rpx;
+  color: #999;
+  width: 100%;
+}
+.login-container .agreement-section .checkbox-container.data-v-4586967a {
+  display: flex;
+  align-items: flex-start;
+}
+.login-container .agreement-section .agreement-text.data-v-4586967a {
+  margin-top: 4rpx;
+  margin-left: 10rpx;
+  line-height: 1.5;
+}
+.login-container .agreement-section .link-text.data-v-4586967a {
+  color: #3c9cff;
+}
+
