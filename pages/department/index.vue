@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<u-button>测试</u-button>
+		<u-button>测试222</u-button>
 		<image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
 			<text class="title">{{title}}</text>

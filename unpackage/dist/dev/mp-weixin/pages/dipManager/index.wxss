@@ -1,24 +1,68 @@
-
-.content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+.dip-container {
+  background-color: #f5f7fa;
+  min-height: 100vh;
 }
-.logo {
-	height: 200rpx;
-	width: 200rpx;
-	margin-top: 200rpx;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 50rpx;
+.header {
+  background-color: #0086f6;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.text-area {
-	display: flex;
-	justify-content: center;
+.header .header-title {
+  color: #ffffff;
+  font-size: 36rpx;
+  font-weight: 500;
 }
-.title {
-	font-size: 36rpx;
-	color: #8f8f94;
+.filter-area {
+  display: flex;
+  background-color: #ffffff;
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #ebeef5;
+}
+.filter-area .filter-item {
+  flex: 1;
+}
+.content-area {
+  padding: 20rpx;
+}
+.chart-card {
+  background-color: #ffffff;
+  border-radius: 12rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 12rpx 0 rgba(0, 0, 0, 0.1);
+}
+.chart-card .card-title {
+  font-size: 28rpx;
+  color: #303133;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+  padding-left: 20rpx;
+  border-left: 6rpx solid #0086f6;
+}
+.chart-card .empty-content {
+  height: 300rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chart-row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  -webkit-column-gap: 10rpx;
+          column-gap: 10rpx;
+}
+.chart-row .half-card {
+  width: 44%;
+}
+.pie-chart, .ring-chart {
+  height: 300rpx;
+  width: 100%;
+}
+.line-chart {
+  height: 500rpx;
+  width: 100%;
 }
 

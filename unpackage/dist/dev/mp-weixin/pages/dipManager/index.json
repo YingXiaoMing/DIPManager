@@ -1,6 +1,8 @@
 {
-  "navigationBarTitleText": "DIP管理",
+  "navigationBarTitleText": "DIP总体监控分析",
   "usingComponents": {
-    "u-button": "/uni_modules/uview-ui/components/u-button/u-button"
+    "u-dropdown": "/uni_modules/uview-ui/components/u-dropdown/u-dropdown",
+    "u-dropdown-item": "/uni_modules/uview-ui/components/u-dropdown-item/u-dropdown-item",
+    "qiun-data-charts": "/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts"
   }
 }

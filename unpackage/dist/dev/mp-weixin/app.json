@@ -10,7 +10,7 @@
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarBackgroundColor": "#0086f6",
     "backgroundColor": "#F8F8F8"
   },
   "tabBar": {
