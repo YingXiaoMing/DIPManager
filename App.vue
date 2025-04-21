@@ -12,7 +12,10 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
+	/* 引入uView样式 */
+	@import "@/uni_modules/uview-ui/index.scss";
+	
 	/* 使用 SCSS 变量 */
 	.page-content {
 		position: relative;

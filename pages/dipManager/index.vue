@@ -3,16 +3,10 @@
 		
 		<!-- 筛选条件区域 -->
 		<view class="filter-area">
-			<view class="filter-item">
-				<u-dropdown>
-					<u-dropdown-item v-model="timeValue" :title="timeTitle" :options="timeOptions"></u-dropdown-item>
-				</u-dropdown>
-			</view>
-			<view class="filter-item">
-				<u-dropdown>
-					<u-dropdown-item v-model="conditionValue" :title="conditionTitle" :options="conditionOptions"></u-dropdown-item>
-				</u-dropdown>
-			</view>
+			<u-dropdown :close-on-click-mask="true" :border-bottom="true">
+				<u-dropdown-item v-model="timeValue" title="时间范围" :options="timeOptions"></u-dropdown-item>
+				<u-dropdown-item v-model="conditionValue" title="类型" :options="conditionOptions"></u-dropdown-item>
+			</u-dropdown>
 		</view>
 		
 		<!-- 内容区域 -->
@@ -101,7 +95,6 @@
 			return {
 				// 筛选条件数据
 				timeValue: '0',
-				timeTitle: '自定义时间',
 				timeOptions: [
 					{ value: '0', label: '最近一周' },
 					{ value: '1', label: '最近一月' },
@@ -109,7 +102,6 @@
 					{ value: '3', label: '最近一年' }
 				],
 				conditionValue: '0',
-				conditionTitle: '过滤条件',
 				conditionOptions: [
 					{ value: '0', label: '全部' },
 					{ value: '1', label: '住院' },
@@ -269,6 +261,9 @@
 				// 实际应用中这里应当从API获取数据
 				// 这里使用模拟数据
 				this.hasData = true;
+				
+				// 根据筛选条件过滤数据
+				console.log("时间范围:", this.timeValue, "类型:", this.conditionValue);
 			},
 			
 			// 时间筛选条件改变
@@ -309,12 +304,8 @@
 	.filter-area {
 		display: flex;
 		background-color: #ffffff;
-		padding: 20rpx 30rpx;
+		padding: 0;
 		border-bottom: 1rpx solid #ebeef5;
-		
-		.filter-item {
-			flex: 1;
-		}
 	}
 	
 	.content-area {

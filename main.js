@@ -14,8 +14,16 @@ app.$mount()
 
 // #ifdef VUE3
 import { createSSRApp } from 'vue'
+
+// 引入uView
+import uView from './uni_modules/uview-ui'
+
 export function createApp() {
   const app = createSSRApp(App)
+  
+  // 使用uView
+  app.use(uView)
+  
   return {
     app
   }
