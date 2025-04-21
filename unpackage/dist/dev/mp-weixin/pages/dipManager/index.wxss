@@ -17,11 +17,8 @@
 .filter-area {
   display: flex;
   background-color: #ffffff;
-  padding: 20rpx 30rpx;
+  padding: 0;
   border-bottom: 1rpx solid #ebeef5;
-}
-.filter-area .filter-item {
-  flex: 1;
 }
 .content-area {
   padding: 20rpx;

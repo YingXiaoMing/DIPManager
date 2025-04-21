@@ -30655,7 +30655,10 @@ var _default = {
       "selectedIconPath": "static/tabbar/department-active.png"
     }]
   },
-  "uniIdRouter": {}
+  "uniIdRouter": {},
+  "easycom": {
+    "^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+  }
 };
 exports.default = _default;
 

@@ -261,18 +261,11 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
-//
-//
-//
 var _default = {
   data: function data() {
     return {
       // 筛选条件数据
       timeValue: '0',
-      timeTitle: '自定义时间',
       timeOptions: [{
         value: '0',
         label: '最近一周'
@@ -287,7 +280,6 @@ var _default = {
         label: '最近一年'
       }],
       conditionValue: '0',
-      conditionTitle: '过滤条件',
       conditionOptions: [{
         value: '0',
         label: '全部'
@@ -464,6 +456,9 @@ var _default = {
       // 实际应用中这里应当从API获取数据
       // 这里使用模拟数据
       this.hasData = true;
+
+      // 根据筛选条件过滤数据
+      console.log("时间范围:", this.timeValue, "类型:", this.conditionValue);
     },
     // 时间筛选条件改变
     timeChange: function timeChange(index) {
