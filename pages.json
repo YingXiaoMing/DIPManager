@@ -37,6 +37,12 @@
 			"style": {
 				"navigationBarTitleText": "病种偏差分析"
 			}
+		},
+		{
+			"path": "pages/medicalRecord/index",
+			"style": {
+				"navigationBarTitleText": "病案出院入组"
+			}
 		}
 	],
 	"globalStyle": {
@@ -66,6 +72,11 @@
 		}, {
 			"pagePath": "pages/deviationAnalysis/index",
 			"text": "病种偏差",
+			"iconPath": "static/tabbar/department.png",
+			"selectedIconPath": "static/tabbar/department-active.png"
+		}, {
+			"pagePath": "pages/medicalRecord/index",
+			"text": "病案出院",
 			"iconPath": "static/tabbar/department.png",
 			"selectedIconPath": "static/tabbar/department-active.png"
 		}]
