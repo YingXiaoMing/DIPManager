@@ -31,6 +31,12 @@
 			"style": {
 				"navigationBarTitleText": "科室盈亏分析"
 			}
+		},
+		{
+			"path": "pages/deviationAnalysis/index",
+			"style": {
+				"navigationBarTitleText": "病种偏差分析"
+			}
 		}
 	],
 	"globalStyle": {
@@ -55,6 +61,11 @@
 		}, {
 			"pagePath": "pages/department/index",
 			"text": "科室盈亏",
+			"iconPath": "static/tabbar/department.png",
+			"selectedIconPath": "static/tabbar/department-active.png"
+		}, {
+			"pagePath": "pages/deviationAnalysis/index",
+			"text": "病种偏差",
 			"iconPath": "static/tabbar/department.png",
 			"selectedIconPath": "static/tabbar/department-active.png"
 		}]
