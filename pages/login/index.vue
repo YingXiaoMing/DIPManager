@@ -24,7 +24,8 @@
 				<u-form :model="form" ref="uForm" >
 					<u-form-item border-bottom="true">
 						<u--input 
-							v-model="form.phone" 
+							v-model="form.phone"
+							border="none"
 							placeholder="请输入您的手机号" 
 							clearable
 						/>
@@ -34,6 +35,7 @@
 							v-model="form.password"
 							placeholder="输入密码" 
 							type="password"
+							border="none"
 							clearable
 						/>
 					</u-form-item>

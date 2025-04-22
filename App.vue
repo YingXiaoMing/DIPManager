@@ -13,8 +13,15 @@
 </script>
 
 <style lang="scss">
+
+
+	@import '@/uni_modules/uni-scss/index.scss';
+
 	/* 引入uView样式 */
 	@import "@/uni_modules/uview-ui/index.scss";
+
+	@import "@/uni_modules/jc-tailwind/index.scss";
+
 	
 	/* 使用 SCSS 变量 */
 	.page-content {
