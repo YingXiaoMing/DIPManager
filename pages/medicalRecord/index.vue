@@ -3,20 +3,24 @@
         <view class="filter-container">
             <view class="filter-row">
                 <view class="filter-item date-filter">
-                    <text class="filter-label">出院日期：</text>
-                    <input type="text" class="filter-input" placeholder="请选择" />
-                    <text class="to-text">至</text>
-                    <input type="text" class="filter-input" placeholder="请选择" />
+                    <view class="search-container">
+                        <u-form :model="model" ref="form1" style="width:100%">
+                            <u-form-item prop="date" labelWidth="80" @click="showCalendar = true; hideKeyboard()" label="出院日期:">
+                                <u--input disabled disabledColor="#ffffff" v-model="model.rangeDate"
+                                placeholder="请选择开始日期和结束日期"></u--input>
+                            </u-form-item>
+                        </u-form>
+                    </view>
                     <view class="search-btn">查询</view>
                 </view>
             </view>
             <view class="filter-row">
                 <view class="filter-tags">
-                    <view class="tag-item" @click="toggleDropdown('disease')">
-                        <text class="tag-text">病案号</text>
+                    <view class="tag-item" @click="show = true">
+                        <text class="tag-text">出院科室</text>
                         <u-icon name="arrow-down" size="12"></u-icon>
                     </view>
-                    <view class="tag-item" @click="toggleDropdown('patientType')">
+                    <view class="tag-item" @click="show = true">
                         <text class="tag-text">患者性别</text>
                         <u-icon name="arrow-down" size="12"></u-icon>
                     </view>
@@ -47,12 +51,12 @@
             <view class="table">
                 <view class="table-head">
                     <view class="head-cell dept">
-                        <text class="cell-text">出院科室</text>
-                        <u-icon name="arrow-down-fill" size="12" color="#007AFF"></u-icon>
+                        <text class="cell-header-text">出院科室</text>
+                        <u-icon name="arrow-down-fill" size="12" color="#fff"></u-icon>
                     </view>
                     <view class="head-cell count">
-                        <text class="cell-text">人次</text>
-                        <u-icon name="arrow-down-fill" size="12" color="#007AFF"></u-icon>
+                        <text class="cell-header-text">人次</text>
+                        <u-icon name="arrow-down-fill" size="12" color="#fff"></u-icon>
                     </view>
                 </view>
                 
@@ -81,9 +85,9 @@
                 <text>共{{totalItems}}条</text>
             </view>
             <view class="page-controls">
-                <text class="page-btn prev" @click="prevPage">
+                <view class="page-btn prev" @click="prevPage">
                     <u-icon name="arrow-left" size="14"></u-icon>
-                </text>
+                </view>
                 <text 
                     v-for="page in displayPages" 
                     :key="page"
@@ -97,9 +101,9 @@
                     class="page-num" 
                     @click="goToPage(totalPages)"
                 >{{totalPages}}</text>
-                <text class="page-btn next" @click="nextPage">
+                <view class="page-btn next" @click="nextPage">
                     <u-icon name="arrow-right" size="14"></u-icon>
-                </text>
+                </view>
             </view>
         </view>
         
@@ -148,6 +152,17 @@
                 </view>
             </view>
         </u-popup>
+
+
+        <u-calendar
+            :show="showCalendar"
+            mode="range"
+            @confirm="calendarConfirm"
+            @close="calendarClose"
+            startText="开始日期"
+            endText="结束日期"
+            confirmDisabledText="请选择结束日期"
+        ></u-calendar>
     </view>
 </template>
 
@@ -156,7 +171,11 @@ export default {
     data() {
         return {
             show: false,
+            showCalendar: false,
             activeDropdown: '',
+            model: {
+                rangeDate: ''
+            },
             // 表格数据
             tableData: [
                 { department: '产科', count: 15069, isCategory: false },
@@ -205,11 +224,17 @@ export default {
             
             return pages;
         },
+
+
+        
         hasMorePages() {
             return this.totalPages > this.displayPages[this.displayPages.length - 1];
         }
     },
     methods: {
+        hideKeyboard() {
+            uni.hideKeyboard()
+        },
         toggleDropdown(type) {
             this.activeDropdown = this.activeDropdown === type ? '' : type;
         },
@@ -218,6 +243,15 @@ export default {
                 this.currentPage--;
                 this.loadData();
             }
+        },
+        calendarConfirm(e) {
+            this.showCalendar = false;
+            this.model.rangeDate = `${e[0]} - ${e[e.length - 1]}`;
+            this.$refs.form1.validateField('date')
+        },
+        calendarClose() {
+            this.showCalendar = false;
+            this.$refs.form1.validateField('date')
         },
         nextPage() {
             if (this.currentPage < this.totalPages) {
@@ -322,9 +356,9 @@ export default {
 }
 
 .filter-label {
-    font-size: 23rpx;
+    font-size: 24rpx;
     color: #333;
-    margin-right: 10rpx;
+    margin-right: 6rpx;
 }
 
 .filter-input {
@@ -343,12 +377,16 @@ export default {
 }
 
 .search-btn {
+    width: 58rpx;
     margin-left: 20rpx;
-    padding: 17rpx 20rpx;
+    padding: 20rpx 20rpx;
     background-color: #007AFF;
     color: #fff;
     border-radius: 8rpx;
     font-size: 24rpx;
+}
+.search-container {
+    width: calc(100vw - 78rpx);
 }
 
 .filter-tags {
@@ -413,32 +451,41 @@ export default {
     padding: 20rpx;
     background-color: #fff;
     margin-bottom: 2rpx;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .header-title {
     font-size: 28rpx;
     font-weight: 500;
     color: #333;
+    padding-left: 10rpx;
 }
 
 .table-container {
-    background-color: #fff;
+    background-color: #f5f7fa;
     overflow-y: auto;
+    padding: 15rpx;
 }
 
 .table {
-    padding: 10rpx;
-    /* width: 100%; */
+    padding: 0;
+    border-radius: 12rpx;
+    overflow: hidden;
+    box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+    margin: 0 5rpx;
+    background-color: #fff;
 }
 
 .table-head {
     display: flex;
     border-bottom: 1px solid #e5e5e5;
-    background-color: #f0f8ff;
+    background-color: #0086f6;
+    border-top-left-radius: 12rpx;
+    border-top-right-radius: 12rpx;
 }
 
 .head-cell {
-    padding: 20rpx;
+    padding: 25rpx 20rpx;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -455,6 +502,11 @@ export default {
 .cell-text {
     font-size: 26rpx;
     color: #333;
+    font-weight: normal;
+}
+.cell-header-text {
+    font-size: 26rpx;
+    color: #ffffff;
     font-weight: 500;
 }
 
@@ -465,6 +517,13 @@ export default {
 .table-row {
     display: flex;
     border-bottom: 1px solid #f5f5f5;
+    border-right: 1px solid #f5f5f5;
+    border-left: 1px solid #f5f5f5;
+}
+
+.table-row:last-child {
+    border-bottom-left-radius: 12rpx;
+    border-bottom-right-radius: 12rpx;
 }
 
 .body-cell {
@@ -472,6 +531,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #fff;
 }
 
 .case-type {

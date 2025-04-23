@@ -2,15 +2,15 @@
 	<view class="content">
 		<view class="flex flex-row w-full h-7 py-3 px-1">
 			<view class="w-3_4 flex flex-row pl-3">
-				<view class="flex flex-row  items-center  rounded-full border border-solid px-2 mr-2 border-gray-400">
+				<view class="flex flex-row  items-center  rounded-full border border-solid px-2 mr-2 border-gray-400" @click="show = true">
 					<label class="text-xs">出院日期</label>
 					<u-icon name="arrow-down" size="12"></u-icon>
 				</view>
-				<view class="flex flex-row  items-center  rounded-full border border-solid px-2 mr-2 border-gray-400">
+				<view class="flex flex-row  items-center  rounded-full border border-solid px-2 mr-2 border-gray-400" @click="show = true">
 					<label class="text-xs">出院科室</label>
 					<u-icon name="arrow-down" size="12"></u-icon>
 				</view>
-				<view class="flex flex-row  items-center  rounded-full border border-solid px-2 mr-2 border-gray-400">
+				<view class="flex flex-row  items-center  rounded-full border border-solid px-2 mr-2 border-gray-400" @click="show = true">
 					<label class="text-xs">结算日期</label>
 					<u-icon name="arrow-down" size="12"></u-icon>
 				</view>
@@ -81,7 +81,7 @@
 				</view>
 			</u-list>
 		</view>
-		<u-popup mode="top" :show="show" round="10" :safeAreaInsetBottom="false">
+		<u-popup mode="top" :show="show" round="10" @close="show = false" :safeAreaInsetBottom="false">
 			<view class="flex flex-row w-full h-7 py-3 px-1">
 				<view class="w-3_4 flex flex-row pl-3">
 					<view class="flex flex-row  items-center  rounded-full border border-solid px-2 mr-2 border-gray-400">
