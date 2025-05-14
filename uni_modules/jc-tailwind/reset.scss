@@ -1,0 +1,21 @@
+/* #ifndef APP-NVUE */
+// 在weex，也即nvue中，所有元素默认为border-box
+view, text { box-sizing: border-box; }
+/* #endif */
+
+image {
+	display: inline-block;
+	// 解决图片加载时可能会瞬间变形的问题
+	will-change: transform;
+}
+
+page {
+	// 此字体不会引发 字体图标在ios下右侧空白字符问题
+	line-height: 1.5;
+	tab-size: 4;
+	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+	font-feature-settings: normal;
+	font-variation-settings: normal;
+	font-size: 28rpx;
+	font-weight: 400;
+}

@@ -1,0 +1,6 @@
+// Justify Items
+@each $s in start, end, center, stretch{
+	.justify-items-#{$s} {
+		justify-items: #{$s};
+	}
+}

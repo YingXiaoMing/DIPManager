@@ -1,0 +1,6 @@
+// Object Fit 
+@each $name in contain, cover, fill, none, scale-down {
+	.object-#{$name} {
+		object-fit: #{$name};
+	}
+}

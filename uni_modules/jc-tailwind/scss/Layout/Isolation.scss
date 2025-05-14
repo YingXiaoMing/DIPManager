@@ -1,0 +1,6 @@
+// Isolation
+@each $name, $val in isolate isolate, 'isolation-auto' auto {
+	.#{$name} {
+		isolation: #{$val};
+	}
+}

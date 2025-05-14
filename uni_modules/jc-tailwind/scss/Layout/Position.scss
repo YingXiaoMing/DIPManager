@@ -1,0 +1,6 @@
+// Position 
+@each $s, $l in static, fixed, absolute, relative, sticky {
+	.#{$s} {
+		position: #{$s};
+	}
+}

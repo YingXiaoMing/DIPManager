@@ -101,10 +101,10 @@ var components
 try {
   components = {
     uIcon: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 234))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 258))
     },
     uButton: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-button/u-button.vue */ 224))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-button/u-button.vue */ 248))
     },
   }
 } catch (e) {
@@ -172,10 +172,12 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {
 
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _routes = _interopRequireDefault(__webpack_require__(/*! @/common/routes.js */ 165));
 //
 //
 //
@@ -233,10 +235,10 @@ var _default = {
   },
   methods: {
     goBack: function goBack() {
-      uni.navigateBack();
+      _routes.default.toLogin();
     },
     goPwdLogin: function goPwdLogin() {
-      uni.navigateBack();
+      _routes.default.toLogin();
     },
     formatPhone: function formatPhone(phone) {
       return phone || '';
@@ -259,6 +261,7 @@ var _default = {
           icon: 'none'
         });
       }, 1000);
+      _routes.default.toCodeLogin();
     },
     checkboxGroupChange: function checkboxGroupChange(e) {
       this.isAgree = e.detail.value.length > 0;

@@ -1,0 +1,6 @@
+// Justify Content
+@each $s, $l in normal normal, start flex-start, end flex-end, center center, between space-between, around space-around, evenly space-evenly, stretch stretch{
+	.justify-#{$s} {
+		justify-content: #{$l};
+	}
+}

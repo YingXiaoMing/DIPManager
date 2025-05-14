@@ -1,0 +1,1 @@
+// backgroundClip$backgroundClips: 'bg-clip-border' 'border-box','bg-clip-padding' 'padding-box','bg-clip-content' 'content-box','bg-clip-text' 'text';@each $name, $val in $backgroundClips {	.#{$name} {background-clip: #{$val};}}

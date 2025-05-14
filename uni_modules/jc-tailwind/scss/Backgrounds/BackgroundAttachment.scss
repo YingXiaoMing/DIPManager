@@ -1,0 +1,1 @@
+// backgroundAttachment$backgroundAttachments: 'bg-fixed' 'fixed','bg-local' 'local','bg-scroll' 'scroll';@each $name, $val in $backgroundAttachments {	.#{$name} {background-attachment: #{$val};}}

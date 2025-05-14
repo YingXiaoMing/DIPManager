@@ -1,0 +1,36 @@
+// Border Width
+[class*='border-'] {
+	border: 0 solid RGB(0 0 0 / var(--border-opacity));
+}
+$arr: '', 0, 2, 3, 4, 8;
+
+@mixin render($name, $val) {
+	.border#{$name} { border-width: $val; }
+}
+
+@mixin renderOther($name, $val) {
+	.border-x#{$name} { border-left-width: $val; border-right-width: $val; }
+	.border-y#{$name} { border-top-width: $val; border-bottom-width: $val; }
+	.border-s#{$name} { border-inline-start-width: $val; }
+	.border-e#{$name} { border-inline-end-width: $val; }
+	.border-t#{$name} { border-top-width: $val; }
+	.border-r#{$name} { border-right-width: $val; }
+	.border-b#{$name} { border-bottom-width: $val; }
+	.border-l#{$name} { border-left-width: $val; }
+}
+
+@each $name in $arr {
+	@if ($name == '') {
+		@include render($name, 1rpx);
+	} @else {
+		@include render(-#{$name}, #{$name * 2}rpx);
+	}
+}
+
+@each $name in $arr {
+	@if ($name == '') {
+		@include renderOther($name, 1rpx);
+	} @else {
+		@include renderOther(-#{$name}, #{$name * 2}rpx);
+	}
+}

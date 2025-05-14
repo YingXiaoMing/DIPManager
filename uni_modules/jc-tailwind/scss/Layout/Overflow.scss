@@ -1,0 +1,12 @@
+// Overflow
+@each $s, $l in auto, hidden, clip, visible, scroll {
+	.overflow-#{$s} {
+		overflow: #{$s};
+	}
+	.overflow-x-#{$s} {
+		overflow-x: #{$s};
+	}
+	.overflow-y-#{$s} {
+		overflow-y: #{$s};
+	}
+}

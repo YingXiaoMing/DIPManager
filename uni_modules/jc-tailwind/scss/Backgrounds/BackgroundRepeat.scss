@@ -1,0 +1,1 @@
+// backgroundRepeat$backgroundRepeats: 'bg-repeat' 'repeat','bg-no-repeat' 'no-repeat','bg-repeat-x' 'repeat-x','bg-repeat-y' 'repeat-y','bg-repeat-round' 'round','bg-repeat-space' 'space';@each $name, $val in $backgroundRepeats {	.#{$name} {background-repeat: #{$val};}}

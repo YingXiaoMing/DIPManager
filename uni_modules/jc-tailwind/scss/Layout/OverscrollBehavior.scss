@@ -1,0 +1,12 @@
+// Overscroll Behavior
+@each $s, $l in auto, contain, none {
+	.overscroll-#{$s} {
+		overscroll-behavior: #{$s};
+	}
+	.overscroll-x-#{$s} {
+		overscroll-behavior-x: #{$s};
+	}
+	.overscroll-y-#{$s} {
+		overscroll-behavior-y: #{$s};
+	}
+}

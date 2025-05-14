@@ -1,0 +1,54 @@
+// Actives
+@each $i in $colorIndexes {
+	@each $name, $colors in $colorNames {
+		$colorName: --color-#{$name}-#{$i};
+		[class*='active-#{$name}-#{$i}'] {
+			&:active {
+				background-color: RGB(var($colorName) / var(--active-opacity));
+			}
+		}
+		
+		[class*='active-text-#{$name}-#{$i}'] {
+			&:active {
+				color: RGB(var($colorName) / var(--active-opacity));
+			}
+		}
+		
+		// .active-#{$name}-#{$i} {
+		// 	&:active {
+		// 		background-color: RGB(var($colorName) / var(--active-opacity));
+		// 	}
+		// }
+		
+		// @include setOpacity(active-#{$name}-#{$i}, --active-opacity);
+	}
+}
+
+@each $name, $val in inherit inherit, current currentColor, 'transparent' transparent, 'black' 'RGB(0 0 0 / var(--active-opacity))', 'white' 'RGB(255 255 255 / var(--active-opacity))'{
+	[class*='active-#{$name}'] {
+		&:active {
+			background-color: #{$val};
+		}
+	}
+	
+	[class*='active-text-#{$name}'] {
+		&:active {
+			color: #{$val};
+		}
+	}
+	// .active-#{$name} {
+	// 	&:active {
+	// 		background-color: #{$val};
+	// 	}
+	// }
+	
+	// @include setOpacity(active-#{$name}, --active-opacity);
+}
+
+@each $name, $val in 'black' 'RGB(0 0 0 / var(--active-opacity))', 'white' 'RGB(255 255 255 / var(--active-opacity))'{
+	@include setOpacity(active-#{$name}, --active-opacity);
+}
+
+@each $name, $val in 'black' 'RGB(0 0 0 / var(--active-opacity))', 'white' 'RGB(255 255 255 / var(--active-opacity))'{
+	@include setOpacity(active-text-#{$name}, --active-opacity);
+}

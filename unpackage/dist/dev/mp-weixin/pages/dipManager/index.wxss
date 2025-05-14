@@ -62,4 +62,7 @@
   height: 500rpx;
   width: 100%;
 }
+.filter-left-container {
+  background: #F1F1FB;
+}
 

@@ -1,0 +1,98 @@
+
+
+// Text Align
+@each $name in left, center, right, justify, start, end {
+	.text-#{$name} {text-align: $name;}
+}
+
+// Text Color
+@each $i in $colorIndexes {
+	@each $name, $colors in $colorNames {
+		$colorName: --color-#{$name}-#{$i};
+		[class*='text-#{$name}-#{$i}'] { color: RGB(var($colorName) / var(--text-opacity)); }
+		
+		// .text-#{$name}-#{$i} {color: RGB(var($colorName) / var(--text-opacity));}
+		
+		// @include setOpacity(text-#{$name}-#{$i}, --text-opacity);
+	}
+}
+
+@each $name, $val in inherit inherit, current currentColor, 'transparent' transparent, 'black' 'RGB(0 0 0 / var(--text-opacity))', 'white' 'RGB(255 255 255 / var(--text-opacity))'{
+	// .text-#{$name} {color: #{$val};}
+	[class*='text-#{$name}'] { color: #{$val}; }
+}
+
+@each $name, $val in 'black' 'RGB(0 0 0 / var(--text-opacity))', 'white' 'RGB(255 255 255 / var(--text-opacity))'{
+	@include setOpacity(text-#{$name}, --text-opacity);
+}
+
+// @each $i in 5,10,20,30,40,50,60,70,80,90 {
+// 	.text-black_#{$i} {color: rgba(0, 0, 0, calc(#{$i} / 100));}
+// 	.text-white_#{$i} {color: rgba(255, 255, 255, calc(#{$i} / 100));}
+// }
+
+// Text Decoration
+$textDecorationLines: 'underline' 'underline','overline' 'overline','line-through' 'line-through','no-underline' 'none';
+@each $name, $val in $textDecorationLines {
+	.#{$name} {text-decoration-line: #{$val};}
+}
+
+// Text Decoration Color
+@each $name, $val in inherit inherit, current currentColor, 'transparent' transparent, 'black' black, 'white' white{
+	.decoration-#{$name} {text-decoration-color: $val;}
+}
+@each $i in $colorIndexes {
+	@each $name, $colors in $colorNames {
+		$colorName: --color-#{$name}-#{$i};
+		.decoration-#{$name}-#{$i} {text-decoration-color: var($colorName);}
+	}
+}
+
+// Text Decoration Style
+$textDecorationStyles: 'decoration-solid' 'solid','decoration-double' 'double','decoration-dotted' 'dotted','decoration-dashed' 'dashed','decoration-wavy' 'wavy';
+
+@each $name, $val in $textDecorationStyles {
+	.#{$name} {text-decoration-style: #{$val};}
+}
+
+// Text Decoration Thickness
+$textDecorationThicknesss: 'decoration-auto' 'auto','decoration-from-font' 'from-font','decoration-0' '0','decoration-1' '2rpx','decoration-2' '4rpx','decoration-4' '8rpx','decoration-8' '16rpx';
+
+@each $name, $val in $textDecorationThicknesss {
+	.#{$name} {text-decoration-thickness: #{$val};}
+}
+	
+
+// Text Underline Offset
+$textUnderlineOffsets: 'underline-offset-auto' 'auto','underline-offset-0' '0','underline-offset-1' '2rpx','underline-offset-2' '4rpx','underline-offset-4' '8rpx','underline-offset-8' '16rpx';@each $name, $val in $textUnderlineOffsets {	.#{$name} {text-underline-offset: #{$val};}}
+
+// Text Transform
+$textTransforms: 'uppercase' 'uppercase','lowercase' 'lowercase','capitalize' 'capitalize','normal-case' 'none';@each $name, $val in $textTransforms {	.#{$name} {text-transform: #{$val};}}
+
+// Text Overflow
+.truncate	{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.text-ellipsis	{ text-overflow: ellipsis; }
+.text-clip	{ text-overflow: clip; }
+
+
+
+
+
+
+$pxNames: '0' ,'px' ,'0-5' ,'1' ,'1-5' ,'2' ,'2-5' ,'3' ,'3-5' ,'4' ,'5' ,'6' ,'7' ,'8' ,'9' ,'10' ,'11' ,'12' ,'14' ,'16' ,'20' ,'24' ,'28' ,'32' ,'36' ,'40' ,'44' ,'48' ,'52' ,'56' ,'60' ,'64' ,'72' ,'80' ,'96';
+
+@mixin setPxs($pxs) {
+	@each $name in $pxs{
+		$varName: --rpx-#{$name};
+		@include render($name, $varName);
+	}
+}
+// Text Indent
+@mixin render($name, $varName) {
+	.indent-#{$name} { text-indent: var($varName); }
+}
+@include setPxs($pxNames);

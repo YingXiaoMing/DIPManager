@@ -1,0 +1,6 @@
+// Border Style
+$arr: solid, dashed, dotted, double, hidden, none;
+
+@each $name in $arr {
+	.border-#{$name} { border-style: $name;}
+}

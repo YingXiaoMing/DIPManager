@@ -1,0 +1,6 @@
+// Box Sizing 
+@each $s, $l in box-border border-box, box-content content-box{
+	.#{$s} {
+		box-sizing: #{$l};
+	}
+}

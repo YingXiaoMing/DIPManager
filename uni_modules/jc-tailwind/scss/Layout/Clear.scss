@@ -1,0 +1,6 @@
+// Clear 
+@each $name in left, right, none, both {
+	.clear-#{$name} {
+		clear: #{$name};
+	}
+}

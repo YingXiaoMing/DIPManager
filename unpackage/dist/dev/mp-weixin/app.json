@@ -2,9 +2,12 @@
   "pages": [
     "pages/login/index",
     "pages/freeLogin/index",
+    "pages/codeLogin/index",
     "pages/index/index",
     "pages/dipManager/index",
-    "pages/department/index"
+    "pages/department/index",
+    "pages/deviationAnalysis/index",
+    "pages/medicalRecord/index"
   ],
   "subPackages": [],
   "window": {
@@ -30,6 +33,18 @@
         "text": "科室盈亏",
         "iconPath": "static/tabbar/department.png",
         "selectedIconPath": "static/tabbar/department-active.png"
+      },
+      {
+        "pagePath": "pages/deviationAnalysis/index",
+        "text": "病种偏差",
+        "iconPath": "static/tabbar/service.png",
+        "selectedIconPath": "static/tabbar/service-active.png"
+      },
+      {
+        "pagePath": "pages/medicalRecord/index",
+        "text": "病案出院",
+        "iconPath": "static/tabbar/service.png",
+        "selectedIconPath": "static/tabbar/service-active.png"
       }
     ]
   },

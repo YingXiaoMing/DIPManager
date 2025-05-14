@@ -1,0 +1,56 @@
+$pxNames: '0' ,'px' ,'0-5' ,'1' ,'1-5' ,'2' ,'2-5' ,'3' ,'3-5' ,'4' ,'5' ,'6' ,'7' ,'8' ,'9' ,'10' ,'11' ,'12' ,'14' ,'16' ,'20' ,'24' ,'28' ,'32' ,'36' ,'40' ,'44' ,'48' ,'52' ,'56' ,'60' ,'64' ,'72' ,'80' ,'96';
+$pctNames: '1_2' ,'1_3' ,'2_3' ,'1_4' ,'2_4' ,'3_4' ,'1_5' ,'2_5' ,'3_5' ,'4_5' ,'1_6' ,'2_6' ,'3_6' ,'4_6' ,'5_6' ,'1_12' ,'2_12' ,'3_12' ,'4_12' ,'5_12' ,'6_12' ,'7_12' ,'8_12' ,'9_12' ,'10_12' ,'11_12';
+
+@mixin setPxs($pxs) {
+	@each $name in $pxs{
+		$varName: --rpx-#{$name};
+		@include render($name, $varName);
+	}
+}
+
+@mixin setPcts($pxs) {
+	@each $name in $pxs{
+		$varName: --percent-#{$name};
+		@include render($name, $varName);
+	}
+}
+
+// Scale
+$scales: 0, 50, 75, 90, 95, 100, 105, 110, 125, 150;
+
+@each $i in $scales {
+	.scale-#{$i} {transform: scale(calc(#{$i} / 100));}
+	.scale-x-#{$i} {transform: scaleX(calc(#{$i} / 100));}
+	.scale-y-#{$i} {transform: scaleY(calc(#{$i} / 100));}
+}
+
+// Rotate
+$rotates: 0, 1, 2, 3, 6, 12, 45, 90, 180;
+
+@each $deg in $rotates {
+	.rotate-#{$deg} {transform: rotate(#{$deg}deg);}
+	.-rotate-#{$deg} {transform: rotate(#{-$deg}deg);}
+}
+
+// Translate
+@mixin render($name, $varName) {
+	.translate-x-#{$name} { transform: translateX(var($varName)); }
+	.translate-y-#{$name} { transform: translateY(var($varName)); }
+}
+@include setPxs($pxNames);
+@include setPcts($pctNames);
+
+// Skew
+$skews: 0, 1, 2, 3, 6, 12;
+
+@each $deg in $skews {
+	.skew-x-#{$deg} {transform: skewX(#{$deg}deg);}
+	.skew-y-#{$deg} {transform: skewY(#{$deg}deg);}
+}
+
+// Transform Origin
+$transformOrigins: center center, top top, top-right 'top right', right right, bottom-right 'bottom right', bottom bottom, bottom-left 'bottom left', left left, top-left 'top left' ;
+
+@each $name, $val in $transformOrigins {
+	.origin-#{$name} {transform-origin: #{$val};}
+}

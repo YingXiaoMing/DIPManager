@@ -1,0 +1,6 @@
+// Align Items
+@each $s, $l in start flex-start, end flex-end, center center, baseline baseline, stretch stretch{
+	.items-#{$s} {
+		align-items: #{$l};
+	}
+}

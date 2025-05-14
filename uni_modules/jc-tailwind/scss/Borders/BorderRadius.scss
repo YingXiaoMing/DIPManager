@@ -1,0 +1,54 @@
+$varPre: '';
+$borderRadius: 'none' 0, 'sm' 2, '' 4, 'md' 6, 'lg' 8, 'xl' 12, '2xl' 16, '3xl' 24, 'full' 9999;
+
+@mixin setBorderRadius($arr) {
+	@each $name, $val in $arr{
+		$varName: '';
+		@if($name != '') {
+			$varName: --#{$varPre}rounded-#{$name};
+		} @else {
+			$varName: --#{$varPre}rounded;
+		}
+		@include render($name, $varName);
+	}
+}
+
+// border Radius
+@mixin render($name, $varName) {
+	@if ($name != '') {
+		.rounded-#{$name} { border-radius: var($varName); }
+		
+		.rounded-s-#{$name} { border-start-start-radius: var($varName); border-end-start-radius: var($varName); }
+		.rounded-e-#{$name} { border-start-end-radius: var($varName); border-end-end-radius: var($varName); }
+		.rounded-t-#{$name} { border-top-left-radius: var($varName); border-top-right-radius: var($varName); }
+		.rounded-r-#{$name} { border-top-right-radius: var($varName); border-bottom-right-radius: var($varName); }
+		.rounded-b-#{$name} { border-bottom-right-radius: var($varName); border-bottom-left-radius: var($varName); }
+		.rounded-l-#{$name} { border-top-left-radius: var($varName); border-bottom-left-radius: var($varName); }
+		.rounded-ss-#{$name} { border-start-start-radius: var($varName); }
+		.rounded-se-#{$name} { border-start-end-radius: var($varName); }
+		.rounded-ee-#{$name} { border-end-end-radius: var($varName); }
+		.rounded-es-#{$name} { border-end-start-radius: var($varName); }
+		.rounded-tl-#{$name} { border-top-left-radius: var($varName); }
+		.rounded-tr-#{$name} { border-top-right-radius: var($varName); }
+		.rounded-br-#{$name} { border-bottom-right-radius: var($varName); }
+		.rounded-bl-#{$name} { border-bottom-left-radius: var($varName); }
+	} @else {
+		.rounded { border-radius: var($varName);  }
+		.rounded-s { border-start-start-radius: var($varName); border-end-start-radius: var($varName); }
+		.rounded-e { border-start-end-radius: var($varName); border-end-end-radius: var($varName); }
+		.rounded-t { border-top-left-radius: var($varName); border-top-right-radius: var($varName); }
+		.rounded-r { border-top-right-radius: var($varName); border-bottom-right-radius: var($varName); }
+		.rounded-b { border-bottom-right-radius: var($varName); border-bottom-left-radius: var($varName); }
+		.rounded-l { border-top-left-radius: var($varName); border-bottom-left-radius: var($varName); }
+		.rounded-ss { border-start-start-radius: var($varName); }
+		.rounded-se { border-start-end-radius: var($varName); }
+		.rounded-ee { border-end-end-radius: var($varName); }
+		.rounded-es { border-end-start-radius: var($varName); }
+		.rounded-tl { border-top-left-radius: var($varName); }
+		.rounded-tr { border-top-right-radius: var($varName); }
+		.rounded-br { border-bottom-right-radius: var($varName); }
+		.rounded-bl { border-bottom-left-radius: var($varName); }
+	}
+	
+}
+@include setBorderRadius($borderRadius);

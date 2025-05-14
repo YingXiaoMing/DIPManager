@@ -1,0 +1,65 @@
+// Colors
+
+// Background Color
+@each $i in $colorIndexes {
+	@each $name, $colors in $colorNames {
+		$colorName: --color-#{$name}-#{$i};
+		// .bg-#{$name}-#{$i} {background-color: RGB(var($colorName) / var(--bg-opacity));}
+		[class*='bg-#{$name}-#{$i}'] {
+			background-color: RGB(var($colorName) / var(--bg-opacity));
+		}
+		// @include setOpacity(bg-#{$name}-#{$i}, --bg-opacity);
+	}
+}
+
+@each $name, $val in inherit inherit, current currentColor, 'transparent' transparent, 'black' 'RGB(0 0 0 / var(--bg-opacity))', 'white' 'RGB(255 255 255 / var(--bg-opacity))'{
+	// .bg-#{$name} {background-color: $val;}
+	[class*='bg-#{$name}'] {
+		background-color: #{$val};
+	}
+}
+
+@each $name, $val in 'black' 'RGB(0 0 0 / var(--bg-opacity))', 'white' 'RGB(255 255 255 / var(--bg-opacity))'{
+	@include setOpacity(bg-#{$name}, --bg-opacity);
+}
+
+
+
+// @each $i in 5,10,20,30,40,50,60,70,80,90 {
+// 	.bg-black_#{$i} {background-color: rgba(0, 0, 0, calc(#{$i} / 100));}
+// 	.bg-white_#{$i} {background-color: rgba(255, 255, 255, calc(#{$i} / 100));}
+// }
+
+
+// 条纹
+@each $name, $colors in $colorNames {
+	$colorName: --color-#{$name}-500;
+	$currentOpacityBgColor: RGB(0 0 0 / 0);
+	$currentOpacityColor: RGB(var($colorName) / var(--color-opacity));
+	// .bg-stripes-#{$name} {
+	// 	background-color: var(--color-#{$name}-50);
+	// 	background-image: linear-gradient(135deg, $currentOpacityColor 10%, $currentOpacityBgColor 0, $currentOpacityBgColor 50%, $currentOpacityColor 0, $currentOpacityColor 60%, $currentOpacityBgColor 0, $currentOpacityBgColor);
+	// 	background-size: calc(7.07 * 2rpx) calc(7.07 * 2rpx);
+	// }
+	
+	[class*='bg-stripes-#{$name}'] {
+		--color-opacity: .5;
+		background-color: RGB(var(--color-#{$name}-50) / var(--color-opacity));
+		background-image: linear-gradient(135deg, $currentOpacityColor 10%, $currentOpacityBgColor 0, $currentOpacityBgColor 50%, $currentOpacityColor 0, $currentOpacityColor 60%, $currentOpacityBgColor 0, $currentOpacityBgColor);
+		background-size: calc(7.07 * 2rpx) calc(7.07 * 2rpx);
+	}
+}
+
+.bg-stripes-white {
+	$bgWhite: RGB(255 255 255 / .75);
+	$bgBlack: RGB(0 0 0 / 0);
+	background-image: linear-gradient(135deg,$bgWhite 10%,$bgBlack 0,$bgBlack 50%,$bgWhite 0,$bgWhite 60%,$bgBlack 0,$bgBlack);
+	background-size: calc(7.07 * 2rpx) calc(7.07 * 2rpx);
+}
+
+.bg-stripes-black {
+	$bgWhite: RGB(0 0 0 / .25);
+	$bgBlack: RGB(0 0 0 / 0);
+	background-image: linear-gradient(135deg,$bgWhite 10%,$bgBlack 0,$bgBlack 50%,$bgWhite 0,$bgWhite 60%,$bgBlack 0,$bgBlack);
+	background-size: calc(7.07 * 2rpx) calc(7.07 * 2rpx);
+}

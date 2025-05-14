@@ -1,0 +1,11 @@
+// Grid Auto Rows
+$lists: auto auto, min min-content, max max-content, fr minmax(0, 1fr);
+@mixin render($name, $val) {
+	.auto-rows-#{$name} { grid-auto-rows: #{$val}; }
+}
+
+@each $name, $val in $lists {
+	@include render($name, $val);
+}
+
+

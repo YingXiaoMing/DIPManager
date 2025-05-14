@@ -1,0 +1,1 @@
+// backgroundOrigin$backgroundOrigins: 'bg-origin-border' 'border-box','bg-origin-padding' 'padding-box','bg-origin-content' 'content-box';@each $name, $val in $backgroundOrigins {	.#{$name} {background-origin: #{$val};}}

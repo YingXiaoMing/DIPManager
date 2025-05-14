@@ -1,0 +1,12 @@
+// Grid Row Start / End
+.row-auto {grid-row: auto;}
+@for $i from 1 through 7 {
+	@if($i < 7) {
+		.row-span-#{$i} {grid-row: span #{$i} / span #{$i};}
+	}
+	.row-start-#{$i} {grid-row-start: #{$i};}
+	.row-end-#{$i} {grid-row-end: #{$i};}
+}
+.row-span-full {grid-row: 1 / -1;}
+.row-start-auto {grid-row-start: auto;}
+.row-end-auto {grid-row-end: auto;}

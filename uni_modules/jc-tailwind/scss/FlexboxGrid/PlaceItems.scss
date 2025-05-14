@@ -1,0 +1,6 @@
+// Place Items
+@each $s, $l in start, end, center, baseline, stretch{
+	.place-items-#{$s} {
+		place-items: #{$s};
+	}
+}

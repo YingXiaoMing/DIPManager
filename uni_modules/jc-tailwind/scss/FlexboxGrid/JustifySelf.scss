@@ -1,0 +1,6 @@
+// Justify Self
+@each $s in auto, start, end, center, stretch {
+	.justify-self-#{$s} {
+		justify-self: #{$s};
+	}
+}

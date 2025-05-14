@@ -1,8 +1,9 @@
 {
   "navigationBarTitleText": "DIP总体监控分析",
   "usingComponents": {
-    "u-dropdown": "/uni_modules/uview-ui/components/u-dropdown/u-dropdown",
-    "u-dropdown-item": "/uni_modules/uview-ui/components/u-dropdown-item/u-dropdown-item",
-    "qiun-data-charts": "/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts"
+    "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon",
+    "u-popup": "/uni_modules/uview-ui/components/u-popup/u-popup",
+    "qiun-data-charts": "/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts",
+    "u-calendar": "/uni_modules/uview-ui/components/u-calendar/u-calendar"
   }
 }

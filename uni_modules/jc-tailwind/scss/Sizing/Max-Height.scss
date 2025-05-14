@@ -1,0 +1,11 @@
+// Max-Height
+
+@mixin render($name, $varName) {
+	.max-h-#{$name} { max-height: var($varName); }
+}
+@include setPxs($pxNames);
+
+$morePcts: full;
+@include setPcts($morePcts);
+
+.max-h-screen {max-height: var(--h-screen);}

@@ -1,0 +1,6 @@
+// Place Self
+@each $s, $l in auto, start, end, center, stretch{
+	.place-self-#{$s} {
+		place-self: #{$s};
+	}
+}

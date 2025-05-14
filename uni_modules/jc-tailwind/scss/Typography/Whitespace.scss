@@ -1,0 +1,6 @@
+// Whitespace
+$arr: 'normal', 'nowrap', 'pre', 'pre-line', 'pre-wrap', 'break-spaces';
+
+@each $name in $arr {
+	.whitespace-#{$name}	{white-space: #{$name};}
+}

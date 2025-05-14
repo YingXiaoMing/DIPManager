@@ -1,0 +1,34 @@
+// boxShadow// $boxShadows: 'shadow-sm' '0 1rpx 4rpx 0 rgba(0, 0, 0, 0.05)','shadow' '0 1rpx 6rpx 0 rgba(0, 0, 0, 0.1), 0 1rpx 4rpx -1rpx rgba(0, 0, 0, 0.1)','shadow-md' '0 8rpx 6px -1rpx rgba(0, 0, 0, 0.1), 0 4rpx 8rpx -4rpx rgba(0, 0, 0, 0.1)','shadow-lg' '0 10px 15px -6rpx rgba(0, 0, 0, 0.1), 0 8rpx 6px -8rpx rgba(0, 0, 0, 0.1)','shadow-xl' '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)','shadow-2xl' '0 25px 50px -24rpx rgba(0, 0, 0, 0.25)','shadow-inner' 'inset 0 4rpx 8rpx 0 rgba(0, 0, 0, 0.05)','shadow-none' '0 0 #000';// @each $name, $val in $boxShadows {	.#{$name} {box-shadow: #{$val};}}
+
+.shadow-sm{
+	--shadow-color: rgba(0,0,0,0.05);
+	box-shadow:0 1rpx 4rpx 0 var(--shadow-color);
+}
+.shadow{
+	--shadow-color: rgba(0,0,0,0.1);
+	box-shadow:0 1rpx 6rpx 0 var(--shadow-color),0 1rpx 4rpx -1rpx var(--shadow-color);
+}
+.shadow-md{
+	--shadow-color: rgba(0,0,0,0.1);
+	box-shadow:0 8rpx 6px -1rpx var(--shadow-color),0 4rpx 8rpx -4rpx var(--shadow-color);
+}
+.shadow-lg{
+	--shadow-color: rgba(0,0,0,0.1);
+	box-shadow:0 10px 15px -6rpx var(--shadow-color),0 8rpx 6px -8rpx var(--shadow-color);
+}
+.shadow-xl{
+	--shadow-color: rgba(0,0,0,0.1);
+	box-shadow:0 20px 25px -5px var(--shadow-color),0 8px 10px -6px var(--shadow-color);
+}
+.shadow-2xl{
+	--shadow-color: rgba(0,0,0,0.25);
+	box-shadow:0 25px 50px -24rpx var(--shadow-color);
+}
+.shadow-inner{
+	--shadow-color: rgba(0,0,0,0.05);
+	box-shadow:inset 0 4rpx 8rpx 0 var(--shadow-color);
+}
+.shadow-none{
+	--shadow-color: #000;
+	box-shadow:0 0 var(--shadow-color);
+}

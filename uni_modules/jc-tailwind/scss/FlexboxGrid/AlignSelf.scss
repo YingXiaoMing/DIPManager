@@ -1,0 +1,6 @@
+// Align Self
+@each $s, $l in auto auto, start flex-start, end flex-end, center center, stretch stretch, baseline baseline{
+	.self-#{$s} {
+		align-self: #{$l};
+	}
+}

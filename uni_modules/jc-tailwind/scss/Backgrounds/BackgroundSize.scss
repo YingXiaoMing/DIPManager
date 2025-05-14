@@ -1,0 +1,1 @@
+// backgroundSize$backgroundSizes: 'bg-auto' 'auto','bg-cover' 'cover','bg-contain' 'contain';@each $name, $val in $backgroundSizes {	.#{$name} {background-size: #{$val};}}

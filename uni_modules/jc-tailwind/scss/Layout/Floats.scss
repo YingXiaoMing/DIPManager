@@ -1,0 +1,6 @@
+// Floats 
+@each $name in left, right, none {
+	.float-#{$name} {
+		float: #{$name};
+	}
+}

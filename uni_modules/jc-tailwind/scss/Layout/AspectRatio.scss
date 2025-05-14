@@ -1,0 +1,11 @@
+// Aspect Ratio
+$arr: 'auto' 'auto', 'square' '1 / 1', 'video' '16 / 9';
+$pre: 'aspect';
+
+@mixin render($name, $val) {
+	.#{$pre}-#{$name} { aspect-ratio: #{$val}; }
+}
+
+@each $name, $val in $arr {
+	@include render($name, $val);
+}

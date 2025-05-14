@@ -1,0 +1,6 @@
+// Place Content
+@each $s, $l in center center, start start, end end, between space-between, around space-around, evenly space-evenly, baseline baseline, stretch stretch{
+	.place-content-#{$s} {
+		place-content: #{$l};
+	}
+}

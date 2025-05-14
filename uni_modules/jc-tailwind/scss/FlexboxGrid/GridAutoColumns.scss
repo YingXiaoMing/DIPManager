@@ -1,0 +1,10 @@
+// Grid Auto Columns
+
+$lists: auto auto, min min-content, max max-content, fr minmax(0, 1fr);
+@mixin render($name, $val) {
+	.auto-cols-#{$name} { grid-auto-columns: #{$val}; }
+}
+
+@each $name, $val in $lists {
+	@include render($name, $val);
+}

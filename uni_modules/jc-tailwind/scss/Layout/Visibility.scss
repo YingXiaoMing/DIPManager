@@ -1,0 +1,9 @@
+// Visibility
+
+@mixin render($name, $val) {
+	.#{$name} { visibility: $val; }
+}
+
+@each $name, $val in visible visible, invisible hidden, collapse collapse {
+	@include render($name, $val);
+}

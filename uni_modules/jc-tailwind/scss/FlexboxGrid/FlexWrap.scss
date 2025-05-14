@@ -1,0 +1,6 @@
+// Flex Wrap
+@each $s, $l in wrap, wrap-reverse, nowrap{
+	.flex-#{$s} {
+		flex-wrap: #{$s};
+	}
+}

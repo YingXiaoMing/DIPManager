@@ -1,0 +1,12 @@
+// Grid Column Start / End
+.col-auto {grid-column: auto;}
+@for $i from 1 through 13 {
+	@if($i < 13) {
+		.col-span-#{$i} {grid-column: span #{$i} / span #{$i};}
+	}
+	.col-start-#{$i} {grid-column-start: #{$i};}
+	.col-end-#{$i} {grid-column-end: #{$i};}
+}
+.col-span-full {grid-column: 1 / -1;}
+.col-start-auto {grid-column-start: auto;}
+.col-end-auto {grid-column-end: auto;}

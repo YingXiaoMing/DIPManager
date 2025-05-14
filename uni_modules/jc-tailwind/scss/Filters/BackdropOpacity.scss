@@ -1,0 +1,1 @@
+// backdrop Opacity$backdropFilters: 'backdrop-blur-none' 'blur(0)','backdrop-blur-sm' 'blur(8rpx)','backdrop-blur-' 'blur(16rpx)','backdrop-blur-md' 'blur(24rpx)','backdrop-blur-lg' 'blur(32rpx)','backdrop-blur-xl' 'blur(48rpx)','backdrop-blur-2xl' 'blur(80rpx)','backdrop-blur-3xl' 'blur(128rpx)';@each $name, $val in $backdropFilters {	.#{$name} {backdrop-filter: #{$val};}}

@@ -1,0 +1,2 @@
+// Hyphens
+$hyphenss: 'hyphens-none' 'none','hyphens-manual' 'manual','hyphens-auto' 'auto';@each $name, $val in $hyphenss {	.#{$name} {hyphens: #{$val};}}

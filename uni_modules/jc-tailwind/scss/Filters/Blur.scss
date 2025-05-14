@@ -1,0 +1,1 @@
+// Blur$filters: 'blur-none' 'blur(0)','blur-sm' 'blur(8rpx)','blur' 'blur(16rpx)','blur-md' 'blur(24rpx)','blur-lg' 'blur(32rpx)','blur-xl' 'blur(48rpx)','blur-2xl' 'blur(80rpx)','blur-3xl' 'blur(128rpx)';@each $name, $val in $filters {	.#{$name} {filter: #{$val};}}

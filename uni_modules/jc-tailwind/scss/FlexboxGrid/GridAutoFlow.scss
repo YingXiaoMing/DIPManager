@@ -1,0 +1,9 @@
+// Grid Auto Flow
+$lists: row row, col column, dense dense, 'row-dense' 'row dense', 'col-dense' 'column dense';
+@mixin render($name, $val) {
+	.grid-flow-#{$name} { grid-auto-flow: #{$val}; }
+}
+
+@each $name, $val in $lists {
+	@include render($name, $val);
+}

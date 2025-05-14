@@ -1,0 +1,10 @@
+// appearance$appearances: 'appearance-none' 'none',;@each $name, $val in $appearances {	.#{$name} {appearance: #{$val};}}
+
+
+// pointerEvents$pointerEventss: 'pointer-events-none' 'none','pointer-events-auto' 'auto';@each $name, $val in $pointerEventss {	.#{$name} {pointer-events: #{$val};}}
+
+// scrollBehavior$scrollBehaviors: 'scroll-auto' 'auto','scroll-smooth' 'smooth';@each $name, $val in $scrollBehaviors {	.#{$name} {scroll-behavior: #{$val};}}
+
+// userSelect$userSelects: 'select-none' 'none','select-text' 'text','select-all' 'all','select-auto' 'auto';@each $name, $val in $userSelects {	.#{$name} {user-select: #{$val};}}
+
+// willChange$willChanges: 'will-change-auto' 'auto','will-change-scroll' ' scroll-position','will-change-contents' 'contents','will-change-transform' 'transform';@each $name, $val in $willChanges {	.#{$name} {will-change: #{$val};}}

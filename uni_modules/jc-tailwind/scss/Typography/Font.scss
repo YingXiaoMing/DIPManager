@@ -1,0 +1,46 @@
+$varPre: '';
+@mixin setFontSizes($fontSizes) {
+	@each $name, $val in $fontSizes{
+		$varName: --#{$varPre}text-#{$name};
+		$varLhName: --#{$varPre}text-#{$name}-lineHeight;
+		@include render($name, $varName, $varLhName);
+	}
+}
+
+// Font Family
+.font-sans	{font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
+.font-serif	{font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;}
+.font-mono	{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+
+// FontSize
+$fontSizes: '3xs' 10, '2xs' 11, 'xs' 12, 'mini' 13, 'sm' 14, 'md' 15, 'base' 16, 'lg' 18, 'xl' 20, '2xl' 24, '3xl' 30, '4xl' 36, '5xl' 48, '6xl' 60, '7xl' 72, '8xl' 96, '9xl' 128;
+
+@mixin render($name, $varName, $varLhName) {
+	.text-#{$name} { 
+		font-size: var($varName); 
+		line-height: var($varLhName); 
+	}
+}
+@include setFontSizes($fontSizes);
+
+
+// Font Smoothing
+// TODO
+
+// Font Style
+$fontStyles: italic italic, not-italic normal;
+@each $name, $val in $fontStyles {
+	.#{$name} {font-style: #{$val};}
+}
+
+// Font Weight
+@each $name, $val in thin 100, extralight 200, light 300, normal 400, medium 500, semibold 600, bold 700, extrabold 800, 'black' 900 {
+	.font-#{$name} {font-weight: $val;}
+}
+
+// Font Variant Numeric
+$fontVariantNumerics: 'normal-nums' 'normal','ordinal' 'ordinal','slashed-zero' 'slashed-zero','lining-nums' 'lining-nums','oldstyle-nums' 'oldstyle-nums','proportional-nums' 'proportional-nums','tabular-nums' 'tabular-nums','diagonal-fractions' 'diagonal-fractions','stacked-fractions' 'stacked-fractions';
+
+@each $name, $val in $fontVariantNumerics {
+	.#{$name} {font-variant-numeric: #{$val};}
+}
