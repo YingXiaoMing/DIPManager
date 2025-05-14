@@ -46,6 +46,8 @@
 </template>
 
 <script>
+import routes from '@/common/routes.js'
+
 export default {
 	data() {
 		return {
@@ -55,10 +57,10 @@ export default {
 	},
 	methods: {
 		goBack() {
-			uni.navigateBack();
+			routes.toLogin();
 		},
 		goPwdLogin() {
-			uni.navigateBack();
+			routes.toLogin();
 		},
 		formatPhone(phone) {
 			return phone || '';
@@ -81,6 +83,9 @@ export default {
 					icon: 'none'
 				});
 			}, 1000);
+			routes.toCodeLogin();
+
+
 		},
 		checkboxGroupChange(e) {
 			this.isAgree = e.detail.value.length > 0;

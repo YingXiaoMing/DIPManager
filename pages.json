@@ -15,6 +15,13 @@
 			}
 		},
 		{
+			"path": "pages/codeLogin/index",
+			"style": {
+				"navigationBarTitleText": "验证登录",
+				"navigationStyle": "custom"
+			}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "uni-app"
@@ -72,17 +79,18 @@
 		}, {
 			"pagePath": "pages/deviationAnalysis/index",
 			"text": "病种偏差",
-			"iconPath": "static/tabbar/department.png",
-			"selectedIconPath": "static/tabbar/department-active.png"
+			"iconPath": "static/tabbar/service.png",
+			"selectedIconPath": "static/tabbar/service-active.png"
 		}, {
 			"pagePath": "pages/medicalRecord/index",
 			"text": "病案出院",
-			"iconPath": "static/tabbar/department.png",
-			"selectedIconPath": "static/tabbar/department-active.png"
+			"iconPath": "static/tabbar/service.png",
+			"selectedIconPath": "static/tabbar/service-active.png"
 		}]
 	},
 	"uniIdRouter": {},
 	"easycom": {
 		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
-	}
+	},
+	"lazyCodeLoading": "requiredComponents"
 }

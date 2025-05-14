@@ -2,6 +2,7 @@ export default {
     // 登录相关路由
     loginUri: "pages/login/index",
     freeLoginUri: "pages/freeLogin/index",
+    codeLoginUri: 'pages/codeLogin/index',
     
     // 主页相关路由
     indexUri: "pages/index/index",
@@ -11,6 +12,7 @@ export default {
     dipManagerUri: "pages/dipManager/index",
     // 部门管理路由
     departmentUri: "pages/department/index",
+
 
     
     // 可以添加路由跳转方法
@@ -46,6 +48,13 @@ export default {
             url: '/' + this.freeLoginUri,
             ...options
         });
+    },
+
+    toCodeLogin(options = {}) {
+        uni.navigateTo({
+            url: '/' + this.codeLoginUri,
+            ...options
+        })
     },
     
     toIndex(options = {}) {
